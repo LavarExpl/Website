@@ -3,7 +3,8 @@ import streamlit as st
 import requests
 from streamlit_lottie import st_lottie
 
-st.set_page_config(page_title =' My Webpage', page_icon= 'tada', layout= 'wide')
+st.set_page_config(page_title=' My Webpage', page_icon='tada', layout='wide')
+
 
 def load_lottieurl(url):
     r = requests.get(url)
@@ -12,23 +13,22 @@ def load_lottieurl(url):
     return r.json()
 
 
-#def local_css(file_name):
-    #with open(file_name)as f:
-    #    st.markdown(f"<styles>{f.read()}</style>", unsafe_allow_html=True)
+# def local_css(file_name):
+# with open(file_name)as f:
+#    st.markdown(f"<styles>{f.read()}</style>", unsafe_allow_html=True)
 
-#local_css('syle.html')
+# local_css('syle.html')
 
 
+lottie_coding = load_lottieurl('https://assets5.lottiefiles.com/packages/lf20_w51pcehl.json')
+# img_contact_form =Image.open('images/IMG_1417.png')
+# img_lottie_animation = Image
 
-lottie_coding = load_lottieurl( 'https://assets5.lottiefiles.com/packages/lf20_w51pcehl.json')
-#img_contact_form =Image.open('images/IMG_1417.png')
-#img_lottie_animation = Image
-
-#--- Header section ----
+# --- Header section ----
 
 st.subheader(' Hi, I am lavar :wave:')
 st.title('-I am a former student athlete from Brooklyn,NY.')
-st.write(' -I am currently an employee at Nike and I am passionate about learning new langauges. ')
+st.write(' -I am currently an employee at Nike and I am passionate about learning new languages. ')
 st.write('-[Learn more>](https://606965f043cc5.site123.me)')
 
 # -- What i do ---
@@ -41,13 +41,13 @@ with st.container():
         st.write(
             '''
             -My experience as a former high-level college athlete has led me to chasing my passion in inspiring the youth through sports and physical activity; and to be a voice for athletes of all cultural and economic backgrounds."
-            
+
             -I am a goal oriented, motivated individual with a demonstrated history of playing high level division 1 team sports with an emphasis on teamwork and collaboration. I am skilled in SAP, Python, Tableau, Microsoft Excel, SQL Server, Spanish, Keynote. I currently live in Portland and work as a Marketplace Operations Specialist in the supply chain function at Nike.
         ''')
 
     st.write('[YouTube Channel>](https://www.youtube.com/watch?v=VMI9eP1EW6Q)')
 with right_column:
-    st_lottie(lottie_coding, height =300, key ='coding ')
+    st_lottie(lottie_coding, height=300, key='coding ')
 
 # project --
 
@@ -55,12 +55,17 @@ with st.container():
     st.write('---')
     st.header('MY projects')
     st.write('##')
-    image_column, text_column = st.columns((1,2))
-    #with image_column:
-       # st.image(img_lottie_animation)
+    image_column, text_column = st.columns((1, 2))
+    # with image_column:
+    # st.image(img_lottie_animation)
     with text_column:
-        st.subheader("Intergrate Lottie Animationes inside your streamlit app")
-        st.write('My name is Lavar Harewood, I am from Brooklyn, NY. I am a recent MBA graduate from the University of Portland where I competed on the Men’s Basketball team and worked as a graduate assistant within the athletic department. I attended South Carolina State University for my undergraduate degree in Business Administration. While at South Carolina State I competed on the Men’s Basketball team, where I was a team captain every year that I played. I was also a member of the Black Wall Street investment club.')
+        st.subheader("")
+        st.write(
+            'My name is Lavar Harewood, I am from Brooklyn, NY. I am a recent MBA graduate from the University of '
+            'Portland where I competed on the Men’s Basketball team and worked as a graduate assistant within the '
+            'athletic department. I attended South Carolina State University for my undergraduate degree in Business '
+            'Administration. While at South Carolina State I competed on the Men’s Basketball team, where I was a '
+            'team captain every year that I played. I was also a member of the Black Wall Street investment club.')
 
     with st.container():
         st.write("---")
@@ -78,7 +83,7 @@ contact_form = '''
      <button type="submit">Send</button>
 </form>
 '''
-left_column,right_column = st.columns(2)
+left_column, right_column = st.columns(2)
 with left_column:
     st.markdown(contact_form, unsafe_allow_html=True)
 with right_column:
